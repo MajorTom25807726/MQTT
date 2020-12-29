@@ -1,0 +1,84 @@
+[
+    {
+        "id": "5fe02063.5bb9d",
+        "type": "tab",
+        "label": "MQTT112/29",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "3133a49e.a3611c",
+        "type": "inject",
+        "z": "5fe02063.5bb9d",
+        "name": "",
+        "topic": "",
+        "payload": ",,25.3",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 130,
+        "y": 260,
+        "wires": [
+            [
+                "108de01f.4b94c"
+            ]
+        ]
+    },
+    {
+        "id": "3f7a088e.aa7f78",
+        "type": "inject",
+        "z": "5fe02063.5bb9d",
+        "name": "",
+        "topic": "",
+        "payload": ",,20.3",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 130,
+        "y": 340,
+        "wires": [
+            [
+                "108de01f.4b94c"
+            ]
+        ]
+    },
+    {
+        "id": "108de01f.4b94c",
+        "type": "mqtt out",
+        "z": "5fe02063.5bb9d",
+        "name": "",
+        "topic": "mcs/DiWR3KRF/If96ypeWv0DEqO3y/Temp",
+        "qos": "2",
+        "retain": "",
+        "broker": "be3a7c79.c26a",
+        "x": 430,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "be3a7c79.c26a",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "MCS Cloud",
+        "broker": "mqtt.mcs.mediatek.com",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    }
+]
