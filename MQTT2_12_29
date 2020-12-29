@@ -1,0 +1,140 @@
+[
+    {
+        "id": "fe047942.fc5128",
+        "type": "tab",
+        "label": "MQTT212/29",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "802adcaf.e919b",
+        "type": "mqtt in",
+        "z": "fe047942.fc5128",
+        "name": "",
+        "topic": "mcs/DiWR3KRF/If96ypeWv0DEqO3y/+",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "5f8be30f.e364ec",
+        "x": 210,
+        "y": 220,
+        "wires": [
+            [
+                "c4a3db9d.52c788"
+            ]
+        ]
+    },
+    {
+        "id": "c4a3db9d.52c788",
+        "type": "csv",
+        "z": "fe047942.fc5128",
+        "name": "",
+        "sep": ",",
+        "hdrin": "",
+        "hdrout": "",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": ",,Data",
+        "skip": "0",
+        "strings": true,
+        "x": 170,
+        "y": 340,
+        "wires": [
+            [
+                "154f7076.60e76"
+            ]
+        ]
+    },
+    {
+        "id": "154f7076.60e76",
+        "type": "change",
+        "z": "fe047942.fc5128",
+        "name": "Get Data",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.Data",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 220,
+        "y": 480,
+        "wires": [
+            [
+                "4beac480.9c183c"
+            ]
+        ]
+    },
+    {
+        "id": "4beac480.9c183c",
+        "type": "ui_gauge",
+        "z": "fe047942.fc5128",
+        "name": "",
+        "group": "ec87e282.18ecc",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 410,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "5f8be30f.e364ec",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "MCS Cloud",
+        "broker": "mqtt.mcs.mediatek.com",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "ec87e282.18ecc",
+        "type": "ui_group",
+        "z": "",
+        "name": "Status",
+        "tab": "8173d9a2.fb89b8",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "8173d9a2.fb89b8",
+        "type": "ui_tab",
+        "name": "Tab 1",
+        "icon": "dashboard",
+        "order": 1
+    }
+]
